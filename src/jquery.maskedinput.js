@@ -437,9 +437,10 @@ $.fn.extend({
 				});
                 if (chrome && android)
                 {
+		  $(this).removeAttr("maxlength");	
                     input
-                        .off('input.mask')
-                        .on('input.mask', androidInputEvent);
+                        .off('beforeinput.mask')
+                        .on('beforeinput.mask', androidInputEvent);
                 }
 				checkVal(); //Perform initial check for existing values
 		});
